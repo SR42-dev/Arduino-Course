@@ -1,0 +1,14 @@
+#include <Servo.h>
+Servo S1;
+void setup() 
+{
+   S1.attach(10); // attaches the servo on pin 10 to the servo object
+}
+
+
+void loop() 
+{
+   for(int a = 0; a < 180 ;a+=20) {
+   S1.write(a); // sets the servo position according to the scaled value
+   delay(1000);}
+}

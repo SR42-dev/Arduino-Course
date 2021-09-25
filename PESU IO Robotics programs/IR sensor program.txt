@@ -1,0 +1,23 @@
+void setup() 
+{
+  pinMode(A1, INPUT); 
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int a = analogRead(A1); //a is the variable where the input is stored
+  Serial.println(a);
+  /*
+  if (a == 1)
+  {
+    digitalWrite(4, LOW); 
+  }
+  
+  else
+  {
+    digitalWrite(4, HIGH); 
+  }
+  */
+}
+  

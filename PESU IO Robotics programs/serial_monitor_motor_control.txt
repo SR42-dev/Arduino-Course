@@ -1,0 +1,57 @@
+void setup()
+{
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  analogWrite(2,255);
+  analogWrite(3,255);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  
+  char c = Serial.read();
+  
+  digitalWrite(4, LOW); // default state
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  
+  if (c == 'f') // forward
+  {
+    digitalWrite(4, HIGH); 
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, HIGH);  
+    delay(100);
+  }
+  if (c == 'l') // left
+  {
+    digitalWrite(4, LOW); 
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, HIGH);
+    delay(100);
+  }
+  if (c == 'b') // backward
+  {
+    digitalWrite(4, LOW); 
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, LOW);
+    delay(100); 
+  }
+  if (c == 'r') // right
+  {
+    digitalWrite(4, HIGH); 
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    delay(100); 
+  }
+
+}
